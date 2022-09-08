@@ -3,7 +3,7 @@ package day3task;
 public class Task1 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Circle circle=new Circle(5);
 		circle.calculateArea();
 	}
