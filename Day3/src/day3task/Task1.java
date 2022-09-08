@@ -1,11 +1,15 @@
 package day3task;
 
+import java.util.Scanner;
+
 public class Task1 {
 
 	public static void main(String[] args) {
-		
-		Circle circle=new Circle(5);
+		Scanner sc=new Scanner(System.in);
+		int radius=sc.nextInt();
+		Circle circle=new Circle(radius);
 		circle.calculateArea();
+		sc.close();
 	}
 
 }
@@ -16,7 +20,7 @@ class Circle{
 		this.radius=radius;
 	}
 	Circle(){
-		
+		super();
 	}
 	public  void  calculateArea() {
 		double val=Math.PI*(this.radius*this.radius);
