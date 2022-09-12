@@ -49,3 +49,33 @@ class Fibonacci{
 		return array;
 	}
 }
+ class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		System.out.println(fact(num));
+		System.out.println(len(num));
+	}
+	public static String fact(int num){
+	    ArrayList<Integer> val=new ArrayList<>();
+		for(int i=1;i<=num;i++){
+		    if(num%i==0){
+		        val.add(i);
+		    }
+		}
+		String res="";
+		for(int i=0;i<val.size();i++){
+		    res=res+val.get(i);
+		    if(i!=val.size()-1){
+		        res=res+" ";
+		    }
+		}
+		//System.out.println(val);
+		return res;
+	}
+	public static int len(int num){
+	    String res=num+"";
+	    return res.length();
+	}
+}
