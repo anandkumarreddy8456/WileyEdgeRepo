@@ -1,5 +1,5 @@
 package day5_Assignment;
-@SuppressWarnings("unused")
+
 public class Employee {
 	private int empId;
 	private String empName;
