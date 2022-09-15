@@ -56,6 +56,7 @@ class Fibonacci{
 		int num=sc.nextInt();
 		System.out.println(fact(num));
 		System.out.println(len(num));
+		sc.close();
 	}
 	public static String fact(int num){
 	    ArrayList<Integer> val=new ArrayList<>();
