@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
-import java.util.concurrent.RecursiveTask;
+
 public class Forkclass {
 
 	public static void main(String[] args) {
@@ -58,6 +58,7 @@ public class Forkclass {
 //}
 
 
+@SuppressWarnings("serial")
 class NewTask extends RecursiveAction
 {
 	private long Load = 0;
