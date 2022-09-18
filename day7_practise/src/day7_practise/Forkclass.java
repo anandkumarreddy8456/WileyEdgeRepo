@@ -4,13 +4,30 @@ import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
 
-public class Forkclass {
+public class Forkclass implements Car{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+//		String name="anand";
+//		System.out.println(reverse(name));
+		Car c1=new Forkclass();
+		c1.breakapplied();
 	}
-
+	public static String reverse(String name) {
+		String rev="";
+		for(int i=0;i<name.length();i++) {
+			rev=rev+name.charAt(name.length()-i-1);
+		}
+		return rev;
+}
+	@Override
+	public void breakapplied() {
+		System.out.println("Break Has Been Applied");
+		
+	}
+}
+interface Car{
+	public void breakapplied();
 }
 //class Fib{
 //	int number1;
@@ -58,64 +75,64 @@ public class Forkclass {
 //}
 
 
-@SuppressWarnings("serial")
-class NewTask extends RecursiveAction
-{
-	private long Load = 0;
-	
-	public NewTask(long Load) { this.Load = Load; }
-
-	protected void compute()
-	{
-		// fork tasks into smaller subtasks
-		List<NewTask> subtasks = new ArrayList<NewTask>();
-		subtasks.addAll(createSubtasks());
-		
-		for (RecursiveAction subtask : subtasks) {
-			subtask.fork();
-		}
-	}
-	
-	// function to create and add subtasks
-	private List<NewTask> createSubtasks()
-	{
-		// create subtasks
-		List<NewTask> subtasks = new ArrayList<NewTask>();
-		NewTask subtask1 = new NewTask(this.Load / 2);
-		NewTask subtask2 = new NewTask(this.Load / 2);
-		NewTask subtask3 = new NewTask(this.Load / 2);
-		
-		// to add the subtasks
-		subtasks.add(subtask1);
-		subtasks.add(subtask2);
-		subtasks.add(subtask3);
-		
-		return subtasks;
-	}
-}
- class JavaForkJoingetActivethreadcountExample1 {
-	public static void main(final String[] arguments)
-		throws InterruptedException
-	{
-		// get no. of available core available
-		int proc = Runtime.getRuntime().availableProcessors();
-		
-		System.out.println("Number of available core in the processor is: "
-			+ proc);
-			
-		// get no. of threads active
-		ForkJoinPool Pool = ForkJoinPool.commonPool();
-		
-		System.out.println("Number of active thread before invoking: "
-			+ Pool.getActiveThreadCount());
-			
-		NewTask t = new NewTask(400);
-		
-		Pool.invoke(t);
-		
-		System.out.println("Number of active thread after invoking: "
-			+ Pool.getActiveThreadCount());
-		System.out.println("Common Pool Size is: "
-						+ Pool.getPoolSize());
-	}
-}
+//@SuppressWarnings("serial")
+//class NewTask extends RecursiveAction
+//{
+//	private long Load = 0;
+//	
+//	public NewTask(long Load) { this.Load = Load; }
+//
+//	protected void compute()
+//	{
+//		// fork tasks into smaller subtasks
+//		List<NewTask> subtasks = new ArrayList<NewTask>();
+//		subtasks.addAll(createSubtasks());
+//		
+//		for (RecursiveAction subtask : subtasks) {
+//			subtask.fork();
+//		}
+//	}
+//	
+//	// function to create and add subtasks
+//	private List<NewTask> createSubtasks()
+//	{
+//		// create subtasks
+//		List<NewTask> subtasks = new ArrayList<NewTask>();
+//		NewTask subtask1 = new NewTask(this.Load / 2);
+//		NewTask subtask2 = new NewTask(this.Load / 2);
+//		NewTask subtask3 = new NewTask(this.Load / 2);
+//		
+//		// to add the subtasks
+//		subtasks.add(subtask1);
+//		subtasks.add(subtask2);
+//		subtasks.add(subtask3);
+//		
+//		return subtasks;
+//	}
+//}
+// class JavaForkJoingetActivethreadcountExample1 {
+//	public static void main(final String[] arguments)
+//		throws InterruptedException
+//	{
+//		// get no. of available core available
+//		int proc = Runtime.getRuntime().availableProcessors();
+//		
+//		System.out.println("Number of available core in the processor is: "
+//			+ proc);
+//			
+//		// get no. of threads active
+//		ForkJoinPool Pool = ForkJoinPool.commonPool();
+//		
+//		System.out.println("Number of active thread before invoking: "
+//			+ Pool.getActiveThreadCount());
+//			
+//		NewTask t = new NewTask(400);
+//		
+//		Pool.invoke(t);
+//		
+//		System.out.println("Number of active thread after invoking: "
+//			+ Pool.getActiveThreadCount());
+//		System.out.println("Common Pool Size is: "
+//						+ Pool.getPoolSize());
+//	}
+//}
