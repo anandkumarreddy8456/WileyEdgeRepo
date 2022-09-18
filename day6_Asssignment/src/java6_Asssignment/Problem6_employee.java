@@ -1,5 +1,7 @@
 package java6_Asssignment;
 
+import java.util.Arrays;
+
 public class Problem6_employee {
 
 	public static void main(String[] args) {
@@ -45,8 +47,9 @@ class Employee{
 	}
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", address=" + address + "]";
+		return "Employee [id=" + id + ", name=" + name + ", address=" + Arrays.toString(address) + "]";
 	}
+	
 	
 }
 class Address{
