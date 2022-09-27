@@ -14,5 +14,6 @@ public class CustomerTotalBill {
 			return (temp*1)+(50)*0.75+(100*0.5);
 		}
 	}
+	
 
 }

@@ -2,6 +2,7 @@ package pojoclass;
 
 import java.io.Serializable;
 
+
 import utilitypack.CustomerTotalBill;
 
 @SuppressWarnings("serial")
@@ -12,9 +13,7 @@ public class Customer implements Serializable{
 	private int numberOfUnitsConsumed;
 	@SuppressWarnings("unused")
 	private double customerTotalBill;
-	public static void main(String []args) {
-		
-	}
+	
 	public Customer(int customerId, String customerName, String customerAreaCode, int numberOfUnitsConsumed) {
 		super();
 		this.customerId = customerId;
@@ -22,9 +21,11 @@ public class Customer implements Serializable{
 		this.customerAreaCode = customerAreaCode;
 		this.numberOfUnitsConsumed = numberOfUnitsConsumed;
 	}
+	
 	public Customer() {
 		super();
 	}
+
 	public int getCustomerId() {
 		return customerId;
 	}
@@ -54,6 +55,15 @@ public class Customer implements Serializable{
 		return this.customerTotalBill=CustomerTotalBill.totalBill(numberOfUnitsConsumed);
 	}
 	
+	@Override
+	public int hashCode() {
+		return customerId;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		Customer other = (Customer) obj;
+		return this.getCustomerId()==other.getCustomerId() && this.getCustomerName().equals(other.getCustomerName());
+		}
 	@Override
 	public String toString() {
 		

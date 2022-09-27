@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
+
 import java.util.stream.Collectors;
 
 import pojoclass.Customer;
@@ -13,10 +13,13 @@ import pojoclass.Customer;
 public class CustomerUtilityClass {
 
 	public void displayAll(List<Customer> list) {
-		for(Customer c1:list) {
-			Consumer<Customer> consumer=(l)->System.out.println(l);
-			consumer.accept(c1);
-		}
+//		for(Customer c1:list) {
+//			Consumer<Customer> consumer=(l)->System.out.println(l);
+//			consumer.accept(c1);
+//		}
+		list.forEach((l)->{
+			System.out.println(l);
+		});
 	}
 	public void sortByBillDecendingOrder(List<Customer> list) {
 		List<Customer> orderlist=list.stream().sorted(Comparator.comparingDouble(Customer::getCustomerTotalBill).reversed()).collect(Collectors.toList());
