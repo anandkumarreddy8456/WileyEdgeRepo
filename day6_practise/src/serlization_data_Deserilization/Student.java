@@ -6,7 +6,7 @@ import java.io.Serializable;
 public class Student implements Serializable{
 	int id;
 	String name;
-	transient Marks marks;
+	 Marks marks;
 	public Student(int id, String name,Marks marks) {
 		super();
 		this.id = id;
