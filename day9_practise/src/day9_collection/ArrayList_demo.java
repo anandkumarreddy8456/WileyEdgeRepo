@@ -8,6 +8,9 @@ public class ArrayList_demo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		//upto 1.4 Version
+		//List l1=new ArrayList();
+		//After 1.5 Version
 		List<Integer> array=new ArrayList<>();
 		System.out.println(array);
 		for(int i=0;i<5;i++) {
