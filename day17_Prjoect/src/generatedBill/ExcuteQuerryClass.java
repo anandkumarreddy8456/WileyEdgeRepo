@@ -14,7 +14,7 @@ public class ExcuteQuerryClass {
 		ResultSet res=statement.executeQuery("select * from customer");
 		System.out.println("List of All Customers");
 		while(res.next()) {
-			System.out.println(res.getInt(1)+" "+res.getString(2)+" "+res.getString(3));
+			System.out.println(res.getInt(1)+" "+res.getString(2)+" "+res.getInt(3)+" "+res.getString(4));
 		}
 		res.close();
 		statement.close();

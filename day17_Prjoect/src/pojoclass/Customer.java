@@ -6,12 +6,30 @@ public class Customer {
 	private int customerId;
 	private String customerName;
 	private CustomerType customertype;
+	private int areaCode;
+	public Customer() {
+		super();
+	}
 	public Customer(int customerId, String customerName, CustomerType customertype) {
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
 		this.customertype = customertype;
 	}
+	public Customer(int customerId, String customerName, CustomerType customertype, int areaCode) {
+		super();
+		this.customerId = customerId;
+		this.customerName = customerName;
+		this.customertype = customertype;
+		this.areaCode = areaCode;
+	}
+	public int getAreaCode() {
+		return areaCode;
+	}
+	public void setAreaCode(int areaCode) {
+		this.areaCode = areaCode;
+	}
+	
 	public int getCustomerId() {
 		return customerId;
 	}

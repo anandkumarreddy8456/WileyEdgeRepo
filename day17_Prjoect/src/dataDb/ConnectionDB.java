@@ -48,13 +48,14 @@ public class ConnectionDB {
 		//drop table
 		st.execute("drop table customer");
 		//create table 
-		st.execute("create table customer(customerid int primary key,customerName varchar(40),customerType varchar(40))");
+		st.execute("create table customer(customerid int primary key,customerName varchar(40), areaCode int,customerType varchar(40))");
 		//Insert the data
-		PreparedStatement statement=con.prepareStatement("insert into customer values(?,?,?)");
+		PreparedStatement statement=con.prepareStatement("insert into customer values(?,?,?,?)");
 		for(int i=0;i<list.size();i++) {
 			statement.setInt(1, list.get(i).getCustomerId());
 			statement.setString(2,list.get(i).getCustomerName());
-			statement.setString(3,list.get(i).getCustomertype()+"");
+			statement.setInt(3,list.get(i).getAreaCode());
+			statement.setString(4,list.get(i).getCustomertype()+"");
 			statement.executeUpdate();
 		}
 		
@@ -67,7 +68,7 @@ public class ConnectionDB {
 		//drop table
 		st.execute("drop table Consumption");
 		// create table
-		st.execute("create table Consumption(customerId int primary key,month int,unitsConsumed float,totalBill float)");
+		st.execute("create table Consumption(customerId int ,month int,unitsConsumed float,totalBill float)");
 		//Insert the data
 		PreparedStatement statement = con.prepareStatement("insert into Consumption values(?,?,?,?)");
 		for (int i = 0; i < list.size(); i++) {
