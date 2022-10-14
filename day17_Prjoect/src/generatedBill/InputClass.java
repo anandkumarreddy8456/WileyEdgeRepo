@@ -44,7 +44,7 @@ public class InputClass {
 			System.out.println("Please Enter customerId");
 			int cid = sc.nextInt();
 			sc.nextLine();//try{cid=sc.nextInt();if(cid<=0) { throw new  Exception();}}catch(Exception ex) {while(!ExceptionHandle.checkValidInt(cid+"")){cid=sc.nextInt();}}
-			System.out.println("Please Enter Number of Months");
+			System.out.println("Please Enter  Month in Number");
 			int mon =0;try{mon=sc.nextInt();if(mon<=0 || mon>12) { throw new  Exception();}}catch(Exception ex) {while(!ExceptionHandle.checkValidMonth(mon+"")){mon=sc.nextInt();}}
 			System.out.println("Please Enter the Units Consumed");
 			double units=sc.nextDouble();//try{units=sc.nextDouble();if(units<=0) { throw new  Exception();}}catch(Exception ex) {while(!ExceptionHandle.checkValidUnits(units+"")){units=sc.nextDouble();}}

@@ -24,7 +24,7 @@ public class ExcuteQuerryClass {
 	public void billForAllCustomersForMonth(int month) throws Exception{
 		Connection con=ConnectionDB.connect();
 		Statement statement=con.createStatement();
-		System.out.println("Execute of All Customers for "+month+" Month is :");
+		System.out.println("Total Bill of  All Customers for "+month+" Month is :");
 		ResultSet res=statement.executeQuery("select customerid, totalBill from Consumption where month="+month);
 		while(res.next()) {
 			System.out.println(res.getInt(1)+" "+res.getDouble(2));
@@ -37,7 +37,7 @@ public class ExcuteQuerryClass {
 	public void billForParticulatCustForMonth(int cid,int month) throws Exception{
 		Connection con=ConnectionDB.connect();
 		Statement statement=con.createStatement();
-		System.out.println("Execute details of customer id :"+cid+" and month is "+month);
+		System.out.println("Bill of customer id :"+cid+" in the month of "+month);
 		ResultSet res=statement.executeQuery("select customerid, totalBill from Consumption where month="+month+" and customerid="+cid);
 		while(res.next()) {
 			System.out.println(res.getInt(1)+" "+res.getDouble(2));
@@ -49,7 +49,7 @@ public class ExcuteQuerryClass {
 	public void totalBillforParticularMonth(int month) throws Exception{
 		Connection con=ConnectionDB.connect();
 		Statement statement=con.createStatement();
-		System.out.println("Display of total sum for "+month+" month is :");
+		System.out.println("Total Bill for "+month+" month is :");
 		ResultSet res=statement.executeQuery("select sum(totalBill) from Consumption where month="+month);
 		while(res.next()) {
 			System.out.println(res.getDouble(1));
