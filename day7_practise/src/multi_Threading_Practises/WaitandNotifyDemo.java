@@ -6,7 +6,7 @@ public class WaitandNotifyDemo {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		WaitDemo thread1=new WaitDemo();
+		WaitDemo thread1=new WaitDemo(); 
 		thread1.start();
 		// Thread.sleep(1000); --> it is Deadlock Sitution
 		synchronized (thread1) {
