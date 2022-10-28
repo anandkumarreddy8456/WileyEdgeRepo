@@ -15,8 +15,10 @@ public class HashMapDemo {
 		map.put(5, "Anand");
 		map.put(2, "Kumar");
 		map.put(65, "Reddy");
+		// set of Keys
 		Set<Integer> keys=map.keySet();
 		System.out.println("List of All keys : "+keys);
+		// collections of values
 		Collection<String> values=map.values();
 		System.out.println("List of All Values: "+values);
 		System.out.println("Get INstance of Key and Value Pairs :");
