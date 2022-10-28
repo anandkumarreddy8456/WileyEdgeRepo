@@ -3,11 +3,12 @@ package multi_Threading_Practises;
 public class JoinDemo {
 	
 	// join will wait to complete the excution of Mentioned Thread
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		new VenueFixing().start();
 		new CardsPrinting().start();
 		new CardsDistrubtion().start();
+		new CardsDistrubtion().join();
 		for(int i=0;i<10;i++) {
 			System.out.println("Main Thread");
 		}
